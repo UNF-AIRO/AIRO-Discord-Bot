@@ -1,2 +1,4 @@
 PyGithub
 discord
+bs4
+BeautifulSoup4
