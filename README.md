@@ -5,6 +5,12 @@
 <p align="center"> Installing the dependencies </p>
 
 
+<p align="center">
+
 ```pip3 install PyGithub```
+
 ```pip3 install discord```
 
+```pip3 install BeautifulSoup4```
+
+</p>
