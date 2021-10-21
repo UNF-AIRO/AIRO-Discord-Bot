@@ -9,6 +9,8 @@ sha = branch.commit.sha
 commit = repo.get_commit(sha=sha)
 print(commit.commit.author)
 
+
+
 # sha = data["pull_request"]["head"]["sha"]
 # repo.get_commit(sha=sha).create_status(
 #     state="pending",
