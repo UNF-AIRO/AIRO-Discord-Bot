@@ -1,3 +1,24 @@
+#############################################################################                                                  
+#                                                                           #
+#                                                                           #
+#                                   .ss` os:                                #
+#                                `` .ys.`oy: .--` .-/++/:-`                 #
+#                            -oyhhm/:hhddhh-+myydhdys++oshdo.               #
+#                          .yms-..Ms```yM`` sM` -My      `-smo              #
+#                          dm.   `My   yM   sM+:oMh`        /Ns             #
+#                         .Ms    `My`  yM   sNsso:Nh         hM             #
+#                          dm-    MNyhohM   sM`  .Ny        `mm             #
+#                          `sdyooyd+.oMNM:::hm`  oM/...--:/odh.             #
+#                            `://:.  hsssssss-   `oysyyyyso/-               #
+#                                                                           #
+#                                                                           #
+#                                                                           #
+#                                                                           #
+#                                                                           #
+#                                                                           #
+############################################################################# 
+
+
 import os
 
 import discord
