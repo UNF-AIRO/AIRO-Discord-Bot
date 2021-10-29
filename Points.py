@@ -16,6 +16,33 @@ def addPoints(user):
     with open(user["name"] + '.json', 'w') as f:
         user["points"] += 1
         json.dump(user, f)
+def rankPlayer():
+    first = {}
+   
+    second = {}
+   
+    third = {}
+   
+    with open("names" + '.txt', 'r') as f:
+        for line in f.readlines():
+            with open(line + '.json', 'r') as f:
+                user = json.load(f)
+                try:
+                    if user["points"] > first["points"]:
+                        first = user
+                    elif user["points"] > second["points"]:
+                        second = user
+                    elif user["points"] > third["points"]:
+                        third = user
+                except:
+                    first = user
+                    second = user
+                    third = user
+    return [first, second, third]
+
+                
+
+        
 
 def checkForLevelUp(points):
    if points > 0 and points < 2:

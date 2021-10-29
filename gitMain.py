@@ -7,7 +7,7 @@ import git
 ## a repository. Using the github module
 
 def autoMaintain():
-    g = Github("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")
+    g = Github("")
     
     ## Repository Name
     repo = g.get_repo("UNF-AIRO/Experiments")
