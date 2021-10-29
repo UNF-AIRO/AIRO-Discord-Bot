@@ -37,7 +37,7 @@ import json
 
 import Points as pts
 load_dotenv()
-TOKEN = 'OTAxMTk0NDc1MzQ5NjM1MDgy.YXMUwg.2u-lVlvECewxHl5RFxbdsc-sOwA'
+TOKEN = ''
 
 
         
