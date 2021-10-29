@@ -30,10 +30,15 @@ import requests
 
 import xml.dom.minidom
 
+from gitMain import autoMaintain
 #from cairosvg import svg2png
+import time
+import json
 
+import Points as pts
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = 'OTAxMTk0NDc1MzQ5NjM1MDgy.YXMUwg.2u-lVlvECewxHl5RFxbdsc-sOwA'
+
 
         
 client = discord.Client()
@@ -41,7 +46,40 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
+    before = ""
+    channel = client.get_channel(901193670970179637)
+    while True:
+        commit = autoMaintain()
+        if before != str(commit):
+            print(commit[0])
+            print(commit[1])
+ #await channel.send(f"{commit[0]} just commited with the message, {commit[1]}")
+            
+            with open(commit[0] + '.json', 'r') as f:
+                try:
+                    user = json.load(f)
+                  
+                    if pts.checkForLevelUp(user["points"]) != user["level"]:
+                        embed=discord.Embed(title="", url="", description="", color=0x1CEEEE)
+                        #embed.set_thumbnail(url="https://github.com/AndreasInk/HyperDashDiscordBot/blob/main/trophy.png?raw=true")
+                        user["level"] = pts.checkForLevelUp(user["points"])
+                        embed.add_field(name= "Level", value= f"{user['name']} reached level {user['level']} with {user['points']}", inline=False)
+                        await channel.send(embed=embed)
+                        
+                    pts.addPoints(user=user)
 
+
+                except:
+                    user = {}
+                    user["id"] =  0
+                    user["name"] =  commit[0]
+                    user["points"] = 0
+                    user["level"] = 0
+                    pts.addPoints(user= user)
+           
+            
+        before = str(commit)
+        time.sleep(10)
 
 @client.event
 async def on_message(message):

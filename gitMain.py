@@ -7,7 +7,7 @@ import git
 ## a repository. Using the github module
 
 def autoMaintain():
-    g = Github("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")
+    g = Github("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")
     
     ## Repository Name
     repo = g.get_repo("UNF-AIRO/Experiments")
@@ -20,9 +20,9 @@ def autoMaintain():
     sha = branch.commit.sha
     commit = repo.get_commit(sha=sha)
     print(commit.commit.author)
+    return [str(commit.commit.author.name), commit.commit.message]
 
 
-autoMaintain()
 
 
 
