@@ -10,7 +10,7 @@ def autoMaintain():
     g = Github("")
     
     ## Repository Name
-    repo = g.get_repo("UNF-AIRO/Experiments")
+    repo = g.get_repo("UNF-AIRO/AIRO-Chatbot")
 
 
     ## What Branch it is on 
